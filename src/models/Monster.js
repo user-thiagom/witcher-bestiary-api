@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 //Cria o Schema de Monstros
-const monstroSchema = new mongoose.Schema({
+const monsterSchema = new mongoose.Schema({
     id: {type: mongoose.Schema.Types.ObjectId},
     nome: {
         type: String,
@@ -42,11 +42,13 @@ const monstroSchema = new mongoose.Schema({
         type: Number,
         min: 1,
         max: 5
+    },
+    imageUrl: {
+        type: String,
+        trim: true
     }
-})
+},{versionKey: false})
 
-const monstro = mongoose.model("monstros", monstroSchema)
+const monster = mongoose.model("monstros", monsterSchema)
 
-export default monstro
-
-//mongodb+srv://witcher:witcher123@cluster0.qmtf3bn.mongodb.net/?appName=Cluster0
+export default monster
